@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body style="background-color: white">
+    <div id="game" style="border: 1px solid">
+      <canvas id="canvas" width="1250" height="600" style="border: 1px solid">
+      </canvas>
+      <div class="modal add">
+        <header
+          style="
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+          "
+        >
+          <h4>Add pinpoint</h4>
+          <h3 style="color: red" id="closeadd">X</h3>
+        </header>
+        <input type="text" id="namepin" placeholder="Enter location name" />
+      </div>
+      <div id="pincontainer"></div>
+
+      <div class="modal conn">
+        <header
+          style="
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+          "
+        >
+          <h5>Connect</h5>
+          <h4 style="color: red" id="closeconn">X</h4>
+        </header>
+        <div>
+          <input type="text" id="distinput" placeholder="Enter distance (km)" />
+          <select id="modeinput">
+            <option value="">Chose Mode</option>
+            <option value="train">Train</option>
+            <option value="bus">Bus</option>
+            <option value="airplane">Airplane</option>
+          </select>
+        </div>
+
+        <button id="addconn" style="margin-top: 10px">Submit</button>
+      </div>
+
+      <div class="modal search">
+        <h1>Find Route</h1>
+        <section style="display: flex; flex-direction: column; gap: 0.5rem">
+          <input type="text" id="frompininput" placeholder="Pontianak" />
+          <input type="text" id="topininput" placeholder="Bali" />
+          <button onclick="searchRoute()" id="btnsearch" disabled>
+            Search
+          </button>
+          <hr />
+          <div style="display: flex; justify-content: space-between; gap: 4rem">
+            <div>Sort By</div>
+            <div style="display: flex; gap: 0.5rem">
+              <p id="sortfastest" class="current-criteria">Fastest</p>
+              <p id="sortcheapest">Cheapest</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="list-route">
+
+        </section>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
